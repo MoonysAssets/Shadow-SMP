@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 260 50% 5%;
+  --foreground: 260 20% 90%;
+  
+  --primary: 270 80% 60%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 260 30% 15%;
+  --secondary-foreground: 260 20% 90%;
+  
+  --muted: 260 30% 15%;
+  --muted-foreground: 260 20% 60%;
+  
+  --accent: 280 80% 50%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 260 30% 20%;
+  --input: 260 30% 20%;
+  --ring: 270 80% 60%;
+  
+  --radius: 0.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white;
+    font-family: 'DM Sans', sans-serif;
+    background-image: 
+      radial-gradient(circle at 50% 0%, hsl(270, 50%, 20%) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, hsl(260, 40%, 15%) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'VT323', monospace;
+    @apply uppercase tracking-wider;
+  }
+}
+
+@layer components {
+  .minecraft-btn {
+    @apply relative px-6 py-3 font-minecraft text-xl uppercase tracking-widest transition-all duration-200;
+    @apply border-2 border-primary bg-secondary/80 text-white shadow-[0_4px_0_0_hsl(270,80%,40%)] hover:shadow-[0_6px_0_0_hsl(270,80%,40%)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none;
+  }
+
+  .minecraft-card {
+    @apply bg-secondary/50 border-2 border-primary/20 backdrop-blur-sm rounded-xl transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_hsla(270,80%,60%,0.3)];
+  }
+
+  .font-minecraft {
+    font-family: 'VT323', monospace;
+  }
+}
